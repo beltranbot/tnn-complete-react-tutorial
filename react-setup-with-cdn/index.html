@@ -20,8 +20,13 @@
                 age: 30
             }
 
-            handleClick (e) {
-                console.log('e', e, e.target)
+            handleClick = (e) => {
+                // we use an arrow function when we want to
+                // access the state
+                this.setState({
+                    name: 'Yoshi'
+                })
+                console.log('e', this.state)
             }
 
             handleMouseOver (e) {
