@@ -5,7 +5,7 @@ const Contact = (props) => {
         // when using react router
         // the router is automatically added to the props
         // of child components of the routes
-        props.history.push('/about')
+        // props.history.push('/about')
     }, 2000)
     return (
         <div className="container">
