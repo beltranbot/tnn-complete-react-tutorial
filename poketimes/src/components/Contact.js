@@ -1,6 +1,12 @@
 import React from 'react'
 
-const Contact = () => {
+const Contact = (props) => {
+    setTimeout(() => {
+        // when using react router
+        // the router is automatically added to the props
+        // of child components of the routes
+        props.history.push('/about')
+    }, 2000)
     return (
         <div className="container">
             <h4 className="center">Contact</h4>
