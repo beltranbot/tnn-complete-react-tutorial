@@ -28,7 +28,6 @@ class Post extends Component {
       <div className="center">Loading post...</div>
     )
     
-    
     return (
       <div className="container">
         {post}
