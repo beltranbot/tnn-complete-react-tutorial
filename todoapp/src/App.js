@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Todos from './Todos'
+import AddTodo from './AddTodo'
 
 class App extends Component {
     state = {
@@ -10,7 +11,12 @@ class App extends Component {
     }
 
     deleteTodo = id => {
-        let todos = this.state.todos.filter(todo => todo.id !== id)
+        const todos = this.state.todos.filter(todo => todo.id !== id)
+        this.setState({todos})
+    }
+
+    addTodo = todo => {
+        const todos = [...this.state.todos, todo]
         this.setState({todos})
     }
 
@@ -21,6 +27,7 @@ class App extends Component {
                 <Todos todos={this.state.todos}
                     deleteTodo={this.deleteTodo}
                 />
+                <AddTodo addTodo={this.addTodo}/>
             </div>
         )
     }

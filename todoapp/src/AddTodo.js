@@ -1,0 +1,40 @@
+import React, {Component} from 'react'
+
+class AddTodo extends Component {
+
+    state = {
+        content: ''
+    }
+
+    handleSubmit = e => {
+        e.preventDefault()
+        const todo = {
+            id: Math.random(),
+            content: this.state.content
+        }
+        this.props.addTodo(todo)
+        this.setState({content: ''})
+    }
+
+    handleChange = e => {
+        this.setState({
+            content: e.target.value
+        })
+    }
+
+    render () {
+        return (
+            <div className="add-form">
+                <form onSubmit={this.handleSubmit}>
+                    <label htmlFor="">Add new Todo:</label>
+                    <input type="text" 
+                        onChange={this.handleChange}
+                        value={this.state.content}
+                    />
+                </form>
+            </div>
+        )
+    }
+}
+
+export default AddTodo
