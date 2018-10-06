@@ -8,7 +8,6 @@ import {connect} from 'react-redux'
 class Home extends Component {
 
     render () {
-      console.log(this.props.posts)
       const {posts} = this.props
 
       const postList = posts.length ? (
